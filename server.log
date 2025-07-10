@@ -1,0 +1,945 @@
+
+> tresr-shopify-app@1.0.0 dev
+> nodemon server.js
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+TRESR Shopify App running on port 3001
+Environment: development
+Store: becc05-b4.myshopify.com
+Database tables initialized
+2025-07-10T05:43:25.689Z - GET /health
+2025-07-10T05:43:59.660Z - POST /apps/tresr/wallet-auth
+Error in findOrCreateCustomer: HttpResponseError: Received an error response (404 Not Found) from Shopify:
+"Not Found"
+If you report this error, please include this id: 1b7825b5-0285-4a5e-af4d-0e325a28565e-1752126239
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 404,
+    statusText: 'Not Found',
+    body: { errors: 'Not Found' },
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Encoding': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'Transfer-Encoding': [Array],
+      Vary: [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+Wallet auth error: HttpResponseError: Received an error response (404 Not Found) from Shopify:
+"Not Found"
+If you report this error, please include this id: 1b7825b5-0285-4a5e-af4d-0e325a28565e-1752126239
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 404,
+    statusText: 'Not Found',
+    body: { errors: 'Not Found' },
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Encoding': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'Transfer-Encoding': [Array],
+      Vary: [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+TRESR Shopify App running on port 3001
+Environment: development
+Store: becc05-b4.myshopify.com
+Database tables initialized
+2025-07-10T05:44:36.078Z - POST /apps/tresr/wallet-auth
+Error in findOrCreateCustomer: HttpResponseError: Received an error response (404 Not Found) from Shopify:
+"Not Found"
+If you report this error, please include this id: 2c17f5e5-cc08-4ebe-a5d9-07c335bb7779-1752126276
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 404,
+    statusText: 'Not Found',
+    body: { errors: 'Not Found' },
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Encoding': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'Transfer-Encoding': [Array],
+      Vary: [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+Wallet auth error: HttpResponseError: Received an error response (404 Not Found) from Shopify:
+"Not Found"
+If you report this error, please include this id: 2c17f5e5-cc08-4ebe-a5d9-07c335bb7779-1752126276
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 404,
+    statusText: 'Not Found',
+    body: { errors: 'Not Found' },
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Encoding': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'Transfer-Encoding': [Array],
+      Vary: [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+2025-07-10T05:45:12.072Z - GET /health
+2025-07-10T05:45:12.387Z - GET /favicon.ico
+2025-07-10T05:45:23.752Z - GET /apps/tresr/
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+TRESR Shopify App running on port 3001
+Environment: development
+Store: becc05-b4.myshopify.com
+Database tables initialized
+2025-07-10T05:52:05.463Z - GET /health
+2025-07-10T05:52:43.173Z - GET /health
+2025-07-10T05:52:54.634Z - POST /apps/tresr/wallet-auth
+Error in findOrCreateCustomer: HttpResponseError: Received an error response (404 Not Found) from Shopify:
+"Not Found"
+If you report this error, please include this id: 9e14879c-a2da-4adc-9a3f-16c8b098aa00-1752126774
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 404,
+    statusText: 'Not Found',
+    body: { errors: 'Not Found' },
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Encoding': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'Transfer-Encoding': [Array],
+      Vary: [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+Wallet auth error: HttpResponseError: Received an error response (404 Not Found) from Shopify:
+"Not Found"
+If you report this error, please include this id: 9e14879c-a2da-4adc-9a3f-16c8b098aa00-1752126774
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 404,
+    statusText: 'Not Found',
+    body: { errors: 'Not Found' },
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Encoding': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'Transfer-Encoding': [Array],
+      Vary: [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+2025-07-10T05:52:55.191Z - GET /health
+2025-07-10T05:54:58.068Z - POST /apps/tresr/wallet-auth
+Error in findOrCreateCustomer: HttpResponseError: Received an error response (404 Not Found) from Shopify:
+"Not Found"
+If you report this error, please include this id: 7e663058-400e-4637-8b12-5f99cd916944-1752126898
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 404,
+    statusText: 'Not Found',
+    body: { errors: 'Not Found' },
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Encoding': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'Transfer-Encoding': [Array],
+      Vary: [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+Wallet auth error: HttpResponseError: Received an error response (404 Not Found) from Shopify:
+"Not Found"
+If you report this error, please include this id: 7e663058-400e-4637-8b12-5f99cd916944-1752126898
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 404,
+    statusText: 'Not Found',
+    body: { errors: 'Not Found' },
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Encoding': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'Transfer-Encoding': [Array],
+      Vary: [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+2025-07-10T05:54:58.633Z - GET /health
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+TRESR Shopify App running on port 3001
+Environment: development
+Store: becc05-b4.myshopify.com
+Database tables initialized
+2025-07-10T05:58:40.024Z - GET /health
+2025-07-10T05:58:45.597Z - POST /apps/tresr/wallet-auth
+Error in findOrCreateCustomer: HttpResponseError: Received an error response (406 Not Acceptable) from Shopify:
+If you report this error, please include this id: 31c97d08-7d96-45f7-bdc0-b137f500f5f6-1752127125
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 406,
+    statusText: 'Not Acceptable',
+    body: {},
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Length': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+Wallet auth error: HttpResponseError: Received an error response (406 Not Acceptable) from Shopify:
+If you report this error, please include this id: 31c97d08-7d96-45f7-bdc0-b137f500f5f6-1752127125
+    at NewRestClient.throwFailedRequest (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:193:23)
+    at NewRestClient.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/@shopify/shopify-api/lib/clients/http_client/http_client.js:220:22)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/tslib/tslib.js:167:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  response: {
+    code: 406,
+    statusText: 'Not Acceptable',
+    body: {},
+    headers: {
+      'Alt-Svc': [Array],
+      'Cf-Cache-Status': [Array],
+      'Cf-Ray': [Array],
+      Connection: [Array],
+      'Content-Length': [Array],
+      'Content-Security-Policy': [Array],
+      'Content-Type': [Array],
+      Date: [Array],
+      Nel: [Array],
+      'Referrer-Policy': [Array],
+      'Report-To': [Array],
+      'Reporting-Endpoints': [Array],
+      Server: [Array],
+      'Server-Timing': [Array],
+      'Shopify-Edge-Ip': [Array],
+      'Strict-Transport-Security': [Array],
+      'X-Content-Type-Options': [Array],
+      'X-Dc': [Array],
+      'X-Download-Options': [Array],
+      'X-Frame-Options': [Array],
+      'X-Permitted-Cross-Domain-Policies': [Array],
+      'X-Request-Id': [Array],
+      'X-Shardid': [Array],
+      'X-Shopid': [Array],
+      'X-Shopify-Api-Version': [Array],
+      'X-Shopify-Shop-Api-Call-Limit': [Array],
+      'X-Sorting-Hat-Podid': [Array],
+      'X-Sorting-Hat-Shopid': [Array],
+      'X-Stats-Apiclientid': [Array],
+      'X-Stats-Apipermissionid': [Array],
+      'X-Stats-Userid': [Array],
+      'X-Xss-Protection': [Array]
+    }
+  }
+}
+2025-07-10T05:58:46.207Z - GET /health
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:116:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+TRESR Shopify App running on port 3001
+Environment: development
+Store: becc05-b4.myshopify.com
+Database tables initialized
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+TRESR Shopify App running on port 3001
+Environment: development
+Store: becc05-b4.myshopify.com
+Database tables initialized
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:116:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+TRESR Shopify App running on port 3001
+Environment: development
+Store: becc05-b4.myshopify.com
+Database tables initialized
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+TRESR Shopify App running on port 3001
+Environment: development
+Store: becc05-b4.myshopify.com
+Database tables initialized
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:117:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:118:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:120:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:120:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:120:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:120:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:120:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:120:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[shopify-api/INFO] version 7.7.0, environment Node v24.3.0
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/user/Documents/TRESR Shopify/tresr-shopify-app/server.js:120:5)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.3.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
