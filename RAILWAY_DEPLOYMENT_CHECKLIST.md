@@ -55,7 +55,7 @@ DYNAMIC_API_KEY=[Get from Dynamic.xyz dashboard]
 ```
 PORT=3001
 NODE_ENV=production
-APP_URL=https://tresr-shopify-backend.up.railway.app
+APP_URL=https://vibes.tresr.com
 ```
 
 **Security Secrets (GENERATE NEW ONES):**
@@ -76,7 +76,7 @@ If you want a custom domain:
 ### 1. Verify Deployment
 ```bash
 # Check health endpoint
-curl https://tresr-shopify-backend.up.railway.app/health
+curl https://vibes.tresr.com/health
 
 # Expected response:
 # {"status":"ok","timestamp":"..."}
@@ -92,7 +92,7 @@ cd "/Users/user/Documents/TRESR Shopify/tresr-vibes-theme"
 grep -r "localhost:3001" . --include="*.liquid" --include="*.js"
 
 # Replace with production URL:
-# https://tresr-shopify-backend.up.railway.app
+# https://vibes.tresr.com
 ```
 
 ### 3. Theme Update Script
@@ -104,7 +104,7 @@ Create and run this script to update all theme files:
 
 THEME_DIR="/Users/user/Documents/TRESR Shopify/tresr-vibes-theme"
 OLD_URL="http://localhost:3001"
-NEW_URL="https://tresr-shopify-backend.up.railway.app"
+NEW_URL="https://vibes.tresr.com"
 
 cd "$THEME_DIR"
 

@@ -7,7 +7,9 @@ const corsOptions = {
       'https://www.tresr.com',
       'https://0xtresr.com',
       'https://www.0xtresr.com',
-      'https://shopify-api.tresr.com', // Your custom domain
+      'https://vibes.tresr.com',       // Production backend domain
+      'https://auth.tresr.com',        // Auth domain for Dynamic.xyz
+      'https://shopify-api.tresr.com', // Alternative custom domain
       'https://shopify.0xtresr.com'    // Alternative custom domain
     ];
     

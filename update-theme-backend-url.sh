@@ -9,7 +9,7 @@ echo "================================="
 # Configuration
 THEME_DIR="/Users/user/Documents/TRESR Shopify/tresr-vibes-theme"
 OLD_URL="http://localhost:3001"
-NEW_URL="${1:-https://tresr-shopify-backend.up.railway.app}"
+NEW_URL="${1:-https://vibes.tresr.com}"
 
 if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
     echo "Usage: ./update-theme-backend-url.sh [new-backend-url]"

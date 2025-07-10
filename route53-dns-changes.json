@@ -1,0 +1,31 @@
+{
+  "Comment": "Add CNAME records for vibes.tresr.com and auth.tresr.com",
+  "Changes": [
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "vibes.tresr.com",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "tresr-shopify-backend.up.railway.app"
+          }
+        ]
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "auth.tresr.com",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "tresr-shopify-backend.up.railway.app"
+          }
+        ]
+      }
+    }
+  ]
+}
