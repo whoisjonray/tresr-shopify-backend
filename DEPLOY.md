@@ -17,7 +17,7 @@
    ```
    SHOPIFY_API_KEY=1b3b093c28fe7f098b32f6f6bb778a6b
    SHOPIFY_API_SECRET=946fac2004be392ff0cff7f2614eb60a
-   SHOPIFY_ACCESS_TOKEN=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
+   SHOPIFY_ACCESS_TOKEN=shpat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    SHOPIFY_STORE_DOMAIN=becc05-b4.myshopify.com
    DYNAMIC_ENV_ID=b17e8631-c1b7-45d5-95cf-151eb5246423
    JWT_SECRET=[generate a random string]
@@ -68,7 +68,7 @@ PORT=3001
 SHOPIFY_API_KEY=1b3b093c28fe7f098b32f6f6bb778a6b
 SHOPIFY_API_SECRET=946fac2004be392ff0cff7f2614eb60a
 SHOPIFY_STORE_DOMAIN=becc05-b4.myshopify.com
-SHOPIFY_ACCESS_TOKEN=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
+SHOPIFY_ACCESS_TOKEN=shpat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Dynamic.xyz
 DYNAMIC_ENV_ID=b17e8631-c1b7-45d5-95cf-151eb5246423
