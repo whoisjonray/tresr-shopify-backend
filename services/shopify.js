@@ -1,35 +1,33 @@
-const { shopifyApi, ApiVersion, Session } = require('@shopify/shopify-api');
-require('@shopify/shopify-api/adapters/node');
-
-// Initialize Shopify API
-const shopify = shopifyApi({
-  apiKey: process.env.SHOPIFY_API_KEY,
-  apiSecretKey: process.env.SHOPIFY_API_SECRET,
-  scopes: [
-    'read_customers',
-    'write_customers', 
-    'read_discounts',
-    'write_discounts',
-    'read_price_rules',
-    'write_price_rules',
-    'read_products'
-  ],
-  hostName: process.env.APP_URL || 'http://localhost:3000',
-  apiVersion: '2023-10', // Use string instead of enum
-});
-
-// Create session for API calls
-const session = new Session({
-  id: process.env.SHOPIFY_STORE_DOMAIN,
-  shop: process.env.SHOPIFY_STORE_DOMAIN,
-  state: 'active',
-  accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-});
+const { initializeShopify } = require('./shopify-init');
 
 class ShopifyService {
   constructor() {
-    this.client = new shopify.clients.Rest({ session });
-    this.graphqlClient = new shopify.clients.Graphql({ session });
+    // Lazy initialization
+    this._shopify = null;
+    this._session = null;
+    this._client = null;
+    this._graphqlClient = null;
+  }
+
+  // Initialize on first use
+  _ensureInitialized() {
+    if (!this._shopify) {
+      const { shopify, session } = initializeShopify();
+      this._shopify = shopify;
+      this._session = session;
+      this._client = new shopify.clients.Rest({ session });
+      this._graphqlClient = new shopify.clients.Graphql({ session });
+    }
+  }
+
+  get client() {
+    this._ensureInitialized();
+    return this._client;
+  }
+
+  get graphqlClient() {
+    this._ensureInitialized();
+    return this._graphqlClient;
   }
 
   /**
