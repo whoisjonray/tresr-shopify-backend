@@ -29,36 +29,60 @@ router.post('/wallet-auth', async (req, res) => {
       });
     }
 
-    // For demo/testing - skip Shopify API calls
+    // Create or find customer in Shopify
     const customerEmail = email || `${walletAddress.toLowerCase()}@wallet.tresr.com`;
-    const mockCustomerId = 'demo_' + Date.now();
     
-    console.log('Demo mode: Would create customer:', {
+    console.log('Creating/finding customer:', {
       email: customerEmail,
       wallet: walletAddress,
       dynamicUserId
     });
 
-    // Store in local database for quick lookup
-    try {
-      await db.upsertWalletCustomer({
-        wallet_address: walletAddress,
-        shopify_customer_id: mockCustomerId,
-        dynamic_user_id: dynamicUserId,
-        email: customerEmail
-      });
-    } catch (dbError) {
-      console.log('Database not available in demo mode');
-    }
+    // Find or create customer in Shopify
+    const customer = await shopifyService.findOrCreateCustomer(customerEmail, {
+      walletAddress,
+      marketingConsent,
+      first_name: socialAccounts?.google?.name?.split(' ')[0],
+      last_name: socialAccounts?.google?.name?.split(' ')[1]
+    });
 
-    // Check if this is a new creator (always true in demo)
-    const isNewCreator = true;
+    // Update customer metafields with wallet and Dynamic data
+    await shopifyService.updateCustomerMetafields(customer.id, {
+      wallet_address: walletAddress,
+      dynamic_user_id: dynamicUserId,
+      auth_method: authMethod,
+      is_email_verified: isEmailVerified || false,
+      terms_accepted: termsAccepted || false
+    });
+
+    // Store in local database for quick lookup
+    await db.upsertWalletCustomer({
+      wallet_address: walletAddress,
+      shopify_customer_id: customer.id,
+      dynamic_user_id: dynamicUserId,
+      email: customerEmail
+    });
+
+    // Check if this is a new creator
+    const isNewCreator = !customer.tags || !customer.tags.includes('creator');
+
+    // Add creator tag if new
+    if (isNewCreator) {
+      await shopifyService.client.put({
+        path: `customers/${customer.id}`,
+        data: {
+          customer: {
+            tags: customer.tags ? `${customer.tags},creator` : 'creator'
+          }
+        }
+      });
+    }
 
     res.json({
       success: true,
-      customerId: mockCustomerId,
+      customerId: customer.id,
       isNewCreator,
-      message: 'Customer authenticated successfully (demo mode)'
+      message: 'Customer authenticated successfully'
     });
 
   } catch (error) {

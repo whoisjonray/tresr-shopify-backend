@@ -37,10 +37,68 @@ class ShopifyService {
    */
   async findOrCreateCustomer(email, data = {}) {
     try {
-      // Skip search for now - just create
-      // TODO: Implement proper customer search with GraphQL
+      // First, try to find existing customer by email using GraphQL
+      console.log(`Searching for customer with email: ${email}`);
       
-      // Create new customer
+      const searchQuery = `
+        query findCustomerByEmail($query: String!) {
+          customers(first: 1, query: $query) {
+            edges {
+              node {
+                id
+                email
+                firstName
+                lastName
+                tags
+                verifiedEmail
+                acceptsMarketing
+                metafields(first: 10) {
+                  edges {
+                    node {
+                      namespace
+                      key
+                      value
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `;
+      
+      try {
+        const searchResponse = await this.graphqlClient.query({
+          data: { 
+            query: searchQuery,
+            variables: { query: `email:${email}` }
+          }
+        });
+        
+        if (searchResponse.body.data.customers.edges.length > 0) {
+          const customer = searchResponse.body.data.customers.edges[0].node;
+          // Convert GraphQL ID to REST ID
+          const customerId = customer.id.split('/').pop();
+          
+          console.log('Found existing customer:', email);
+          
+          return { 
+            id: customerId,
+            email: customer.email,
+            first_name: customer.firstName,
+            last_name: customer.lastName,
+            tags: customer.tags.join(','),
+            verified_email: customer.verifiedEmail,
+            accepts_marketing: customer.acceptsMarketing
+          };
+        }
+      } catch (searchError) {
+        console.log('Customer search returned no results, will create new customer');
+      }
+      
+      // Customer doesn't exist, create new one
+      console.log('Creating new customer:', email);
+      
       const createResponse = await this.client.post({
         path: 'customers',
         data: {
@@ -60,17 +118,19 @@ class ShopifyService {
         }
       });
 
-      console.log('Customer created:', createResponse.body.customer.email);
+      console.log('Customer created successfully:', createResponse.body.customer.email);
       return createResponse.body.customer;
+      
     } catch (error) {
-      // If customer already exists, try to get them by email
+      // Handle specific error cases
       if (error.response?.body?.errors?.email?.[0]?.includes('taken')) {
-        console.log('Customer already exists, fetching...');
+        // Race condition - customer was created between search and create
+        console.log('Customer was created by another process, fetching...');
         
-        // Use GraphQL to find customer
-        const query = `
-          query findCustomer($email: String!) {
-            customers(first: 1, query: $email) {
+        // Retry the search
+        const retryQuery = `
+          query findCustomer($query: String!) {
+            customers(first: 1, query: $query) {
               edges {
                 node {
                   id
@@ -87,25 +147,24 @@ class ShopifyService {
         try {
           const response = await this.graphqlClient.query({
             data: { 
-              query,
-              variables: { email }
+              query: retryQuery,
+              variables: { query: `email:${email}` }
             }
           });
           
           if (response.body.data.customers.edges.length > 0) {
             const customer = response.body.data.customers.edges[0].node;
-            // Convert GraphQL ID to REST ID
             const customerId = customer.id.split('/').pop();
             return { 
               id: customerId,
               email: customer.email,
               first_name: customer.firstName,
               last_name: customer.lastName,
-              tags: customer.tags
+              tags: customer.tags.join(',')
             };
           }
-        } catch (graphError) {
-          console.error('GraphQL search failed:', graphError);
+        } catch (retryError) {
+          console.error('Retry search failed:', retryError);
         }
       }
       
@@ -172,12 +231,16 @@ class ShopifyService {
   }
 
   /**
-   * Create automatic discount for NFKEY holders
+   * Create discount for NFKEY holders using REST API
+   * Creates both a price rule and discount code
    */
   async createNFKEYDiscount(level, percentage, customerId) {
     const code = `NFKEY-${level}-${customerId}`;
     
     try {
+      // First check if a discount already exists for this customer
+      console.log(`Creating NFKEY discount: Level ${level}, ${percentage}% for customer ${customerId}`);
+      
       // Create price rule
       const priceRule = await this.client.post({
         path: 'price_rules',
@@ -193,10 +256,13 @@ class ShopifyService {
             prerequisite_customer_ids: [customerId],
             starts_at: new Date().toISOString(),
             usage_limit: null,
-            ends_at: null
+            ends_at: null,
+            once_per_customer: false
           }
         }
       });
+
+      console.log('Price rule created:', priceRule.body.price_rule.id);
 
       // Create discount code
       const discountCode = await this.client.post({
@@ -208,79 +274,57 @@ class ShopifyService {
         }
       });
 
+      console.log('Discount code created:', code);
+
       return {
         priceRuleId: priceRule.body.price_rule.id,
         discountCode: code,
         percentage: percentage
       };
     } catch (error) {
-      console.error('Error creating NFKEY discount:', error);
+      // Check if discount already exists
+      if (error.response?.body?.errors?.base?.[0]?.includes('already been taken')) {
+        console.log('Discount code already exists for this customer');
+        return {
+          priceRuleId: null,
+          discountCode: code,
+          percentage: percentage,
+          existing: true
+        };
+      }
+      
+      console.error('Error creating NFKEY discount:', error.response?.body || error);
       throw error;
     }
   }
 
   /**
-   * Create automatic discount using GraphQL (preferred method)
+   * Delete existing discount for a customer
+   * Used when NFKEY level changes
    */
-  async createAutomaticNFKEYDiscount(level, percentage, customerSegmentId) {
-    const mutation = `
-      mutation discountAutomaticBasicCreate($automaticBasicDiscount: DiscountAutomaticBasicInput!) {
-        discountAutomaticBasicCreate(automaticBasicDiscount: $automaticBasicDiscount) {
-          automaticDiscountNode {
-            id
-            automaticDiscount {
-              ... on DiscountAutomaticBasic {
-                title
-                status
-                customerGets {
-                  value {
-                    ... on DiscountPercentage {
-                      percentage
-                    }
-                  }
-                }
-              }
-            }
-          }
-          userErrors {
-            field
-            message
-          }
-        }
-      }
-    `;
-
-    const variables = {
-      automaticBasicDiscount: {
-        title: `NFKEY Level ${level} - ${percentage}% off`,
-        customerGets: {
-          value: {
-            percentage: percentage / 100
-          },
-          items: {
-            all: true
-          }
-        },
-        customerSelection: {
-          customerSegmentIds: [customerSegmentId]
-        },
-        startsAt: new Date().toISOString()
-      }
-    };
-
+  async deleteCustomerDiscounts(customerId) {
     try {
-      const response = await this.graphqlClient.query({
-        data: { query: mutation, variables }
+      // Get all price rules
+      const priceRules = await this.client.get({
+        path: 'price_rules',
+        query: {
+          limit: 250,
+          customer_selection: 'prerequisite'
+        }
       });
 
-      if (response.body.data.discountAutomaticBasicCreate.userErrors.length > 0) {
-        throw new Error(response.body.data.discountAutomaticBasicCreate.userErrors[0].message);
+      // Find and delete price rules for this customer
+      for (const rule of priceRules.body.price_rules) {
+        if (rule.prerequisite_customer_ids?.includes(customerId)) {
+          console.log(`Deleting price rule ${rule.id} for customer ${customerId}`);
+          await this.client.delete({
+            path: `price_rules/${rule.id}`
+          });
+        }
       }
-
-      return response.body.data.discountAutomaticBasicCreate.automaticDiscountNode;
     } catch (error) {
-      console.error('Error creating automatic discount:', error);
-      throw error;
+      console.error('Error deleting customer discounts:', error);
+      // Non-critical error, continue
     }
   }
 
