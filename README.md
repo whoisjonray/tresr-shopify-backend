@@ -165,4 +165,4 @@ Use Serverless Framework for deployment
 
 ## Support
 
-For issues or questions, create an issue in the GitHub repo.
+For issues or questions, create an issue in the GitHub repo.# Force Railway redeploy after payment issue - Fri Sep 12 19:42:38 CDT 2025
